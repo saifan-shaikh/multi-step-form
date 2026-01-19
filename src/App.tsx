@@ -1,35 +1,78 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import cx from "classnames";
 
+import { useSelector } from "react-redux";
+
+import Info from "./components/info";
+import Plan from "./components/plan";
+import AddOns from "./components/addons";
+import Summary from "./components/summary";
+import ThankyouPage from "./components/thankyouPage";
+
+import config from "./config";
+
+import type { reduxStateType } from "./types/type";
+
+import "./App.css";
+
+/* 
+  MAIN COMPONENT
+*/
 function App() {
-  const [count, setCount] = useState(0)
+  // redux declarations
+  const sidebarbutton = useSelector(
+    (state: reduxStateType) => state.multiStepForm.sidebarButtonId
+  );
+  const showThankYouPage = useSelector(
+    (state: reduxStateType) => state.multiStepForm.showThankYouPage
+  );
 
+  const generateNavigationButtons = () => {
+    return config.sidebarButtons.map((button) => {
+      const sidebarButtonClass = cx({
+        "sidebar-button": true,
+        "active-sidebar-button": button.id === sidebarbutton,
+      });
+      return (
+        <div key={button.label} className="sidebar-button-container">
+          <button className={sidebarButtonClass}>{button.id}</button>
+          <div className="sidebar-button-label-container">
+            <div className="sidebar-button-label-header">Step {button.id}</div>
+            <div className="sidebar-button-label-body">{button.label}</div>
+          </div>
+        </div>
+      );
+    });
+  };
+
+  // return statement
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app-container">
+      {/* sidebar */}
+      <div className="sidebar-container">
+        <img
+          className="bg-sidebar-desktop"
+          src="src/assets/images/bg-sidebar-desktop.svg"
+          alt="bg-sidebar-desktop"
+        />
+        <img
+          className="bg-sidebar-mobile"
+          src="src/assets/images/bg-sidebar-mobile.svg"
+          alt="bg-sidebar-mobile"
+        />
+        <div className="navigation-buttons">{generateNavigationButtons()}</div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      {/* body */}
+      <div className="content-main">
+        {sidebarbutton === 1 && <Info />}
+        {sidebarbutton === 2 && <Plan />}
+        {sidebarbutton === 3 && <AddOns />}
+        {sidebarbutton === 4 && (
+          !showThankYouPage ? <Summary /> : <ThankyouPage />
+
+        )}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

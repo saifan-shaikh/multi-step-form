@@ -11,17 +11,17 @@ const config: Config = {
     {
       name: "Arcade",
       cost: { Monthly: 9, Yearly: 90 },
-      imageURL: "../assets/images/icon-arcade.svg",
+      imageURL: "src/assets/images/icon-arcade.svg",
     },
     {
       name: "Advanced",
       cost: { Monthly: 12, Yearly: 120 },
-      imageURL: "../assets/images/icon-advanced.svg",
+      imageURL: "src/assets/images/icon-advanced.svg",
     },
     {
       name: "Pro",
       cost: { Monthly: 15, Yearly: 150 },
-      imageURL: "../assets/images/icon-pro.svg",
+      imageURL: "src/assets/images/icon-pro.svg",
     },
   ],
   errorMessages: {

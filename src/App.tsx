@@ -7,6 +7,8 @@ import Plan from "./components/plan";
 import AddOns from "./components/addons";
 import Summary from "./components/summary";
 import ThankyouPage from "./components/thankyouPage";
+import bgSidebarDesktop from "./assets/images/bg-sidebar-desktop.svg";
+import bgSidebarMobile from "./assets/images/bg-sidebar-mobile.svg";
 
 import config from "./config";
 
@@ -51,12 +53,12 @@ function App() {
       <div className="sidebar-container">
         <img
           className="bg-sidebar-desktop"
-          src="src/assets/images/bg-sidebar-desktop.svg"
+          src={bgSidebarDesktop}
           alt="bg-sidebar-desktop"
         />
         <img
           className="bg-sidebar-mobile"
-          src="src/assets/images/bg-sidebar-mobile.svg"
+          src={bgSidebarMobile}
           alt="bg-sidebar-mobile"
         />
         <div className="navigation-buttons">{generateNavigationButtons()}</div>

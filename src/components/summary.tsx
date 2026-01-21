@@ -73,7 +73,7 @@ const Summary = () => {
                   {addOns.map((addOn) => {
                     if (addOn.isSelected) {
                       return (
-                        <div className="summary-form-body-item">
+                        <div key={addOn.name} className="summary-form-body-item">
                           <div className="summary-form-body-item-name">
                             {addOn.name}
                           </div>

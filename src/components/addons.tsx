@@ -49,6 +49,7 @@ const AddOns = () => {
             });
             return (
               <button
+                key={addOn.name}
                 className={addOnClass}
                 onClick={() => {
                   handleAddOnClick(addOn);

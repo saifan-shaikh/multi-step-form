@@ -36,7 +36,7 @@ function App() {
         <div key={button.label} className="sidebar-button-container">
           <button className={sidebarButtonClass}>{button.id}</button>
           <div className="sidebar-button-label-container">
-            <div className="sidebar-button-label-header">Step {button.id}</div>
+            <div className="sidebar-button-label-header">STEP {button.id}</div>
             <div className="sidebar-button-label-body">{button.label}</div>
           </div>
         </div>

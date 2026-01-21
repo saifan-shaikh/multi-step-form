@@ -39,6 +39,7 @@ const Plan = () => {
       });
       return (
         <button
+          key={planElement.name}
           className={planClass}
           onClick={() => handlePlanClick(planElement)}
         >

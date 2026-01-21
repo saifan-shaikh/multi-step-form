@@ -51,12 +51,12 @@ function App() {
       <div className="sidebar-container">
         <img
           className="bg-sidebar-desktop"
-          src="src/assets/images/bg-sidebar-desktop.svg"
+          src="./assets/images/bg-sidebar-desktop.svg"
           alt="bg-sidebar-desktop"
         />
         <img
           className="bg-sidebar-mobile"
-          src="src/assets/images/bg-sidebar-mobile.svg"
+          src="./assets/images/bg-sidebar-mobile.svg"
           alt="bg-sidebar-mobile"
         />
         <div className="navigation-buttons">{generateNavigationButtons()}</div>

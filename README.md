@@ -56,7 +56,8 @@ Users should be able to:
 
 ### Links
 
-- GitHub Repo URL: [multi-step-form](https://github.com/saifan-shaikh/multi-step-form)
+- GitHub Repo URL: [saifan-shaikh/multi-step-form](https://github.com/saifan-shaikh/multi-step-form)
+- Live Netlify URL: [saifan-shaikh/multi-step-form](https://saifan-shaikhmulti-form-step.netlify.app/)
 
 ## My process
 

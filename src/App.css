@@ -32,8 +32,8 @@ body {
   gap: 24px;
   left: 50%;
   position: absolute;
-  transform: translate(-50%, 100%);
   top: 50%;
+  transform: translate(-50%, 100%);
 }
 .sidebar-button-label-container {
   display: none;
@@ -75,8 +75,8 @@ body {
   flex-direction: column;
   gap: 16px;
   height: 100vh;
-  position: relative;
   justify-content: space-between;
+  position: relative;
 }
 
 .info-container {
@@ -103,10 +103,10 @@ body {
 }
 
 .info-form-section {
-  margin-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 24px;
 }
 
 .info-form-element {
@@ -116,13 +116,13 @@ body {
   margin-bottom: 16px;
 
   input {
-    padding: 16px;
     border: 1px solid var(--purple200);
     border-radius: 8px;
+    padding: 16px;
   }
   input::placeholder {
-    font-weight: bold;
     color: var(--grey500);
+    font-weight: bold;
   }
 
   span {
@@ -134,8 +134,8 @@ body {
 }
 
 .info-form-element-label {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
 
   label {
@@ -198,10 +198,10 @@ body {
 }
 
 .plan-form-section {
-  margin-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 24px;
 }
 
 .plan-container {
@@ -269,16 +269,15 @@ body {
 }
 
 .toggleThumb {
-  height: 16px;
-  width: 16px;
   background-color: white;
   border-radius: 99px;
-  transform: translateX(0);
-  transition: left 0.15s ease;
-  position: absolute;
+  height: 16px;
   left: 4px;
+  position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(0, -50%);
+  transition: left 0.15s ease;
+  width: 16px;
 }
 
 .isToggledYearly {
@@ -289,25 +288,25 @@ body {
 }
 
 .toggle-Yes {
-  font-weight: bold;
   color: var(--blue950);
+  font-weight: bold;
 }
 
 .toggle-No {
-  font-weight: bold;
   color: var(--grey500);
+  font-weight: bold;
 }
 
 .addons-section {
-  margin-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 24px;
 }
 
 .addOn-button {
-  background-color: var(--white);
   align-items: center;
+  background-color: var(--white);
   border: 1px solid var(--purple200);
   border-radius: 8px;
   cursor: pointer;
@@ -317,8 +316,8 @@ body {
 }
 
 .addOn-button-selected {
-  border: 1px solid var(--purple600);
   background-color: var(--blue50);
+  border: 1px solid var(--purple600);
 }
 
 .addOn-content {
@@ -327,8 +326,8 @@ body {
   gap: 16px;
 
   input {
-    width: 20px;
     height: 20px;
+    width: 20px;
   }
 }
 .addOn-content-body {
@@ -358,10 +357,10 @@ body {
 }
 
 .summary-form-section {
-  margin-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 24px;
 }
 
 .summary-form-details {
@@ -373,8 +372,8 @@ body {
   padding: 16px;
 
   span {
-    height: 1px;
     background-color: var(--blue200);
+    height: 1px;
   }
 }
 
@@ -399,10 +398,10 @@ body {
   button {
     background-color: transparent;
     border: none;
-    padding: 0;
     color: var(--grey500);
     cursor: pointer;
     font-size: 14px;
+    padding: 0;
     margin: 0;
     text-decoration: underline;
 
@@ -439,9 +438,9 @@ body {
 
 .summary-form-cost {
   align-items: center;
-  padding: 16px;
   display: flex;
   justify-content: space-between;
+  padding: 16px;
 }
 
 .summary-form-cost-item-name {
@@ -511,13 +510,13 @@ body {
 
   .app-container {
     flex-direction: row;
-    max-height: 100vh;
     margin: 16px;
+    max-height: 100vh;
   }
 
   .sidebar-container {
-    height: 100%;
     width: 300px;
+    height: 100%;
   }
 
   .navigation-buttons {

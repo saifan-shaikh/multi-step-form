@@ -12,11 +12,11 @@ const AddOns = () => {
   // redux declarations
   const dispatch = useDispatch();
   const sidebarButton = useSelector(
-    (state: reduxStateType) => state.multiStepForm.sidebarButtonId
+    (state: reduxStateType) => state.multiStepForm.sidebarButtonId,
   );
   const plan = useSelector((state: reduxStateType) => state.multiStepForm.plan);
   const addOns = useSelector(
-    (state: reduxStateType) => state.multiStepForm.addOns
+    (state: reduxStateType) => state.multiStepForm.addOns,
   );
 
   const handleFooterBtn = (val: number) => {
@@ -49,11 +49,12 @@ const AddOns = () => {
             });
             return (
               <button
-                key={addOn.name}
                 className={addOnClass}
+                key={addOn.name}
                 onClick={() => {
                   handleAddOnClick(addOn);
                 }}
+                type="button"
               >
                 <div className="addOn-content">
                   <input checked={addOn.isSelected} type="checkbox" />

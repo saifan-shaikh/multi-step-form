@@ -5,7 +5,7 @@ import type { reduxStateType, footerButtonsProps } from "../types/type";
 const FooterButtons = (props: footerButtonsProps) => {
   // redux declarations
   const sidebarbutton: number = useSelector(
-    (state: reduxStateType) => state.multiStepForm.sidebarButtonId
+    (state: reduxStateType) => state.multiStepForm.sidebarButtonId,
   );
 
   const footerClass = cx({
@@ -17,7 +17,11 @@ const FooterButtons = (props: footerButtonsProps) => {
   return (
     <div className={footerClass}>
       {sidebarbutton > 1 && (
-        <button className="footer-go-back-button" onClick={props.prevBtnAction}>
+        <button
+          className="footer-go-back-button"
+          onClick={props.prevBtnAction}
+          type="button"
+        >
           Go Back
         </button>
       )}
@@ -25,17 +29,20 @@ const FooterButtons = (props: footerButtonsProps) => {
         <button
           className="footer-next-step-button"
           onClick={props.nextBtnAction}
+          type="submit"
         >
           Next Step
         </button>
       )}
-      {sidebarbutton === 4 && 
-      <button
+      {sidebarbutton === 4 && (
+        <button
           className="footer-confirm-step-button"
           onClick={props.confirmBtnAction}
+          type="submit"
         >
           Confirm
-        </button>}
+        </button>
+      )}
     </div>
   );
 };

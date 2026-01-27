@@ -22,10 +22,10 @@ import "./App.css";
 function App() {
   // redux declarations
   const sidebarbutton = useSelector(
-    (state: reduxStateType) => state.multiStepForm.sidebarButtonId
+    (state: reduxStateType) => state.multiStepForm.sidebarButtonId,
   );
   const showThankYouPage = useSelector(
-    (state: reduxStateType) => state.multiStepForm.showThankYouPage
+    (state: reduxStateType) => state.multiStepForm.showThankYouPage,
   );
 
   const generateNavigationButtons = () => {
@@ -36,7 +36,9 @@ function App() {
       });
       return (
         <div key={button.label} className="sidebar-button-container">
-          <button className={sidebarButtonClass}>{button.id}</button>
+          <button className={sidebarButtonClass} type="button">
+            {button.id}
+          </button>
           <div className="sidebar-button-label-container">
             <div className="sidebar-button-label-header">STEP {button.id}</div>
             <div className="sidebar-button-label-body">{button.label}</div>
@@ -68,10 +70,8 @@ function App() {
         {sidebarbutton === 1 && <Info />}
         {sidebarbutton === 2 && <Plan />}
         {sidebarbutton === 3 && <AddOns />}
-        {sidebarbutton === 4 && (
-          !showThankYouPage ? <Summary /> : <ThankyouPage />
-
-        )}
+        {sidebarbutton === 4 &&
+          (!showThankYouPage ? <Summary /> : <ThankyouPage />)}
       </div>
     </div>
   );

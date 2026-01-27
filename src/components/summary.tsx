@@ -12,11 +12,11 @@ const Summary = () => {
   // redux declarations
   const dispatch = useDispatch();
   const sidebarButton = useSelector(
-    (state:reduxStateType) => state.multiStepForm.sidebarButtonId
+    (state: reduxStateType) => state.multiStepForm.sidebarButtonId,
   );
-  const plan = useSelector((state:reduxStateType) => state.multiStepForm.plan);
+  const plan = useSelector((state: reduxStateType) => state.multiStepForm.plan);
   const addOns = useSelector(
-    (state:reduxStateType) => state.multiStepForm.addOns
+    (state: reduxStateType) => state.multiStepForm.addOns,
   );
 
   const handleFooterBtn = (val: number) => {
@@ -57,6 +57,7 @@ const Summary = () => {
                   onClick={() => {
                     dispatch(setSidebarButtonId(2));
                   }}
+                  type="button"
                 >
                   Change
                 </button>
@@ -73,7 +74,10 @@ const Summary = () => {
                   {addOns.map((addOn) => {
                     if (addOn.isSelected) {
                       return (
-                        <div key={addOn.name} className="summary-form-body-item">
+                        <div
+                          key={addOn.name}
+                          className="summary-form-body-item"
+                        >
                           <div className="summary-form-body-item-name">
                             {addOn.name}
                           </div>

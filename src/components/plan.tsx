@@ -15,7 +15,7 @@ const Plan = () => {
   // redux declarations
   const dispatch = useDispatch();
   const sidebarButton: number = useSelector(
-    (state: reduxStateType) => state.multiStepForm.sidebarButtonId
+    (state: reduxStateType) => state.multiStepForm.sidebarButtonId,
   );
   const plan = useSelector((state: reduxStateType) => state.multiStepForm.plan);
 
@@ -27,7 +27,7 @@ const Plan = () => {
     const newPlanName = planName.name;
     const newPlanCost = planName.cost[plan.planType];
     dispatch(
-      setPlan({ ...plan, planName: newPlanName, planCost: newPlanCost })
+      setPlan({ ...plan, planName: newPlanName, planCost: newPlanCost }),
     );
   };
 
@@ -39,9 +39,10 @@ const Plan = () => {
       });
       return (
         <button
-          key={planElement.name}
           className={planClass}
+          key={planElement.name}
           onClick={() => handlePlanClick(planElement)}
+          type="button"
         >
           <img src={planElement.imageURL} />
           <div className="plan-button-body">
@@ -70,11 +71,11 @@ const Plan = () => {
       plan.planType === "Monthly" ? "Yearly" : "Monthly";
 
     const newPlanCost: number = config.plans.filter(
-      (somePlan) => somePlan.name === plan.planName
+      (somePlan) => somePlan.name === plan.planName,
     )[0].cost[newPlanType];
 
     dispatch(
-      setPlan({ ...plan, planType: newPlanType, planCost: newPlanCost })
+      setPlan({ ...plan, planType: newPlanType, planCost: newPlanCost }),
     );
   };
 
@@ -101,6 +102,7 @@ const Plan = () => {
         <button
           className={toggleBtnClass}
           onClick={() => handlePlanTypeToggle()}
+          type="button"
         >
           <div className="toggleThumb" />
         </button>
